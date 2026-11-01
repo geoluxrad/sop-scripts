@@ -36,20 +36,7 @@ The script integrates with the standard SmartObserverPlus measurement workflow, 
 
 The script automatically retrieves the Modbus communication settings from the SmartObserverPlus instrument configuration.
 
-| Parameter | Value |
-|---|---|
-| Interface | RS-485 (RS485_1, RS485_2, or RS485_3) |
-| Baud rate | From instrument configuration |
-| Parity | None, Even, or Odd |
-| Data bits | 8 |
-| Stop bits | 1 or 2 |
-| Modbus slave address | From instrument configuration |
-| Function | Write Holding Registers |
-| Register address | 21 |
-| Wiper activation value | 1 |
-| Wiper deactivation value | 0 |
-
-The script uses the following command to activate the wiper:
+The script uses the following command to activate the wiper (it writes value `1` into register 21):
 
 ```python
 modbus.write_holding_registers(

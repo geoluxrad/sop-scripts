@@ -31,6 +31,3 @@ def on_line_power_up(line, instruments_on_this_line):
                 logger.delay_ms(5000)
                 modbus.write_holding_registers(config['Port'], int(config['Address']), 21, [0])                
                 break
-    
-
-    # 
