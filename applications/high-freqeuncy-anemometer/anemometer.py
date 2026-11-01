@@ -1,5 +1,8 @@
-# This script reads Anemometer data 10 times per second, accurately, 
+# A Micropython script for Geolux SmartObserverPlus datalogger
+#
+# This script reads anemometer data 10 times per second via Modbus
 # and delivers it via UDP to the connected server.
+#
 
 import gc
 import udp
@@ -48,7 +51,7 @@ try:
         # reset watchdog
         logger.watchdog_reset()
 
-        # make measurement
+        # read measurement from Barani MeteoWind2 instrument via Modbus
         # input 6 = curent wind speed uint 
         # input 7 = deirection
         output = modbus.read_input_registers(0, 1, 6 , 2)
